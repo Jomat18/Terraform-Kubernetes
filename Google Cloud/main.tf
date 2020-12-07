@@ -5,8 +5,8 @@ provider "google" {
   zone        = "us-central1-c" 
 }
 
-resource "google_compute_instance" "my-cluster" {
-  name = "cluster-terraform"
+resource "google_compute_instance" "my-instance" {
+  name = "test-instance"
   machine_type = "f1-micro"
   zone  = "us-central1-c" 
 
