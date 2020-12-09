@@ -2,8 +2,12 @@ provider "aws" {
   region  = var.region
 }
 
-resource "aws_s3_bucket" "b_example" {
-  bucket = "bucket-example-tmed232323"
+resource "random_id" "instance_id" {
+  byte_length = 4
+}
+
+resource "aws_s3_bucket" "my_bucket" {
+  bucket = "bucket-${random_id.instance_id.hex}"
   force_destroy = true
   acl    = "private"
 

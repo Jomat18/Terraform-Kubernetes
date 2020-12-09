@@ -1,3 +1,3 @@
 output "s3-bucket" {
-  value = aws_s3_bucket.b_example.bucket
+  value = aws_s3_bucket.my_bucket.bucket
 }
