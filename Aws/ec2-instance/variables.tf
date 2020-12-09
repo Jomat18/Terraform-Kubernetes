@@ -1,12 +1,12 @@
 variable "region" {
   description = "AWS region"
-  default     = "us-east-2"
+  default     = "us-east-1"
 }
 
 variable "ami" {
-  default     =  "ami-0c8110836d05ad7bd"
+  default     = "ami-00ddb0e5626798373"  #Amazon Machine Image
 }
 
 variable "instance_type" {
-  default = "t2.micro"
+  default     = "t2.micro"
 }

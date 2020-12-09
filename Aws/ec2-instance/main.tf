@@ -3,10 +3,18 @@ provider "aws" {
 }
 
 terraform {
-  required_version = ">= 0.12" # "~> 0.12.24"
+  required_version = ">= 0.12"
+}
+
+resource "random_id" "instance_id" {
+  byte_length = 4
 }
 
 resource "aws_instance" "ec2_example" {
-  ami           = var.ami  #Amazon Machine Image
-  instance_type = var.instance_type  #"t2.micro"
+  ami           = var.ami
+  count         = 3
+  instance_type = var.instance_type
+  tags = {
+    Name = "my-instance-${random_id.instance_id.hex}"
+  }
 }
