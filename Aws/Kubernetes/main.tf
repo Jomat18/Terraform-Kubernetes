@@ -5,8 +5,12 @@ provider "aws" {
 data "aws_availability_zones" "available" {
 }
 
+resource "random_id" "instance_id" {
+  byte_length = 4
+}
+
 locals {
-  cluster_name = "my-eks-cluster"
+  cluster_name = "my-eks-cluster-${random_id.instance_id.hex}"
 }
 
 module "vpc" {
