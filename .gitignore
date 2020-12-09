@@ -5,5 +5,7 @@
 *.tfstate.*
 # .tfvars files
 *.tfvars
+crash.log
 .env
 service-account.json
+kubeconfig_my-eks-cluster
